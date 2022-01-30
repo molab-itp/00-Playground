@@ -11,5 +11,6 @@
         <page name='UIGraphics Text'/>
         <page name='UIGraphics UIImage'/>
         <page name='UIGraphic 10PRINT'/>
+        <page name='Javascript to Swift'/>
     </pages>
 </playground>
