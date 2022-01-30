@@ -14,6 +14,8 @@
 let x = 100
 print("x = \(x)")
 
+// I recommend you always label your print statements to help with debugging
+
 // --
 // to take substring of a string
 
