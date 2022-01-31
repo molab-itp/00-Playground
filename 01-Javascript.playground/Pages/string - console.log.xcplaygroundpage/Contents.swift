@@ -1,3 +1,4 @@
+//: [Previous](@previous)  [Next](@next)
 
 // --
 // to display values
@@ -14,3 +15,4 @@ print("x = \(x)")
 
 // I recommend you use labels in print statements, makes output more readable
 
+//: [Previous](@previous)  [Next](@next)

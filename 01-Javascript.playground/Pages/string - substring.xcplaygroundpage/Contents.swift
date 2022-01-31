@@ -1,3 +1,4 @@
+//: [Previous](@previous)  [Next](@next)
 
 // substring of a string
 
@@ -39,3 +40,5 @@ let start3 = str.index(str.startIndex, offsetBy: 2)
 let end3 = str.index(str.startIndex, offsetBy: 4)
 let str3 = str[start3...end3]
 print("str3 \(str3)")
+
+//: [Previous](@previous)  [Next](@next)

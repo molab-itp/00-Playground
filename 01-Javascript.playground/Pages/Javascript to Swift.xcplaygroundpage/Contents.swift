@@ -1,5 +1,6 @@
+//: [Previous](@previous)  [Next](@next)
 
-// Examples of swift equivalents of javascript
+// Examples of swift equivalents for javascript
 
 /*
  swift and javascript are based on C syntax so much is similar
@@ -7,4 +8,6 @@
  loops: for / while
  values: strings / numbers / arrays
  */
+
+//: [Previous](@previous)  [Next](@next)
 
