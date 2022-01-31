@@ -6,5 +6,6 @@
         <page name='string - substring'/>
         <page name='string - split'/>
         <page name='objects'/>
+        <page name='Template'/>
     </pages>
 </playground>
