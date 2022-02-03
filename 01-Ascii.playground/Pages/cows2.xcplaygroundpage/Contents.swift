@@ -14,7 +14,21 @@ print("cowsStr.count \(cowsStr.count)")
 
 let cowsSplit = cowsStr.split(separator: "\n", omittingEmptySubsequences: false)
 print("cowsSplit.count \(cowsSplit.count)")
-for index in 0...5 {
+for index in 0...10 {
   let it = cowsSplit[index]
   print("\(it) \(it.count) \(index)")
+}
+
+for (index, value) in cowsSplit.enumerated() {
+  if value.count == 0 && index < 50 {
+    print("index \(index)")
+  }
+}
+
+let n = 50 // cowsSplit.count
+for index in 0..<n {
+  let value = cowsSplit[index]
+  if value.count == 0 {
+    print("index \(index)")
+  }
 }
