@@ -4,7 +4,7 @@
 import Foundation
 
 var str = ""
-let n = 5 // 79 100
+let n = 10 // 79 100
 for uni in 0...n {
   let codepoint = 0x1f600 + uni
   let codepointString = String(format: "0x%02X", codepoint)

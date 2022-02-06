@@ -5,8 +5,8 @@ import Foundation
 // swift must use index to access parts of string
 
 //  let str = "/\\"
-//let str = "🟥🟩🟨🌑"
-let str = "▪️▪️🌑"
+let str = "🟥🟩🟨🌑"
+//let str = "▪️▪️🌑"
 //  print("str", str)
 //  print("str.count", str.count)
 //  print("str offset 1", str[str.index(str.startIndex, offsetBy: 1)])

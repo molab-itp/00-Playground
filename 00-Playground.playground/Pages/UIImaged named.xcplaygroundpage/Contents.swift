@@ -3,7 +3,7 @@
 
 import UIKit
 
-let heart1 = UIImage(systemName: "heart.fill")
+let heart1 = UIImage(systemName: "square.and.arrow.up.circle")
 
 let heart2 = UIImage(systemName: "heart")
 
