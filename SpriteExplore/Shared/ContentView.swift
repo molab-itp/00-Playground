@@ -1,21 +1,12 @@
 //
 //  ContentView.swift
 //  Created by jht2 on 2/6/22.
+
 import SwiftUI
 import SceneKit
 import SpriteKit
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
-
-//:
-
-
-struct ExampleView: View {
   let scene = Self.buildScene()
   
   var body: some View {
@@ -35,12 +26,14 @@ struct ExampleView: View {
 }
 
 class BouncingSquares: SKScene {
-  let colors:[NSColor] = [.systemRed, .systemOrange, .systemYellow, .systemGreen, .systemBlue, .systemPurple, .systemPink]
+  //  let colors:[NSColor] = [.systemRed, .systemOrange, .systemYellow, .systemGreen, .systemBlue, .systemPurple, .systemPink]
+  //  let colors:[UIColor] = [.systemRed, .systemOrange, .systemYellow, .systemGreen, .systemBlue, .systemPurple, .systemPink]
+  let colors:[UIColor] = [.systemRed, .systemYellow, .systemGreen, .systemGray]
   var moving = true
   
   func populate() {
-    for _ in 0..<20 {
-      let square = SKSpriteNode(color: colors[self.children.count % 7], size: CGSize(width: 20, height: 20))
+    for _ in 0..<4 {
+      let square = SKSpriteNode(color: colors[self.children.count % colors.count], size: CGSize(width: 20, height: 20))
       
       square.position = CGPoint(x: .random(in: 0...300), y: .random(in: 0...300))
       square.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 20, height: 20))
@@ -67,17 +60,22 @@ class BouncingSquares: SKScene {
     physicsWorld.gravity = .zero
   }
   
-  override func mouseDown(with event: NSEvent) {
+  //  override func mouseDown(with event: NSEvent) {
+  //    self.moving.toggle()
+  //    configureSquares()
+  //  }
+  override func touchesBegan(_ touches: Set<UITouch>,
+                             with event: UIEvent?)
+  {
     self.moving.toggle()
     configureSquares()
   }
-  
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
 
 // https://swiftui-lab.com/companion/
