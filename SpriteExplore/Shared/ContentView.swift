@@ -7,23 +7,28 @@ import SceneKit
 import SpriteKit
 import UIKit
 
-let spriteLen = 80.0
-let frameSize = CGSize(width: 300, height: 600)
-let spriteSize = CGSize(width: frameSize.width/4, height: frameSize.width/4)
+let nsprite = 7
+let frameSize = CGSize(width: 380, height: 600)
+let margin = 5.0
+let spriteLen = frameSize.width / CGFloat(nsprite) - margin
+//let spriteSize = CGSize(width: frameSize.width/4, height: frameSize.width/4)
+let spriteSize = CGSize(width: spriteLen, height: spriteLen)
 
 struct ContentView: View {
   let scene = Self.buildScene()
   
   var body: some View {
     SpriteView(scene: scene)
+      .background(.white)
       .frame(width: frameSize.width, height: frameSize.height)
-      .border(Color.primary)
+//      .border(Color.primary)
   }
   
   static func buildScene() -> BouncingSquares {
     let scene = BouncingSquares()
     scene.size = CGSize(width: frameSize.width, height: frameSize.height)
     scene.scaleMode = .fill
+    scene.backgroundColor = .lightGray
     
     scene.populate()
     return scene
@@ -33,18 +38,20 @@ struct ContentView: View {
 class BouncingSquares: SKScene {
   //  let colors:[NSColor] = [.systemRed, .systemOrange, .systemYellow, .systemGreen, .systemBlue, .systemPurple, .systemPink]
   //  let colors:[UIColor] = [.systemRed, .systemOrange, .systemYellow, .systemGreen, .systemBlue, .systemPurple, .systemPink]
-  let colors:[UIColor] = [.systemRed, .systemYellow, .systemGreen, .white]
+  // let colors:[UIColor] = [.systemRed, .systemYellow, .systemGreen, .black, .white]
+  let colors:[UIColor] = [.red, .yellow, .green, .black, .white]
   var moving = false
   
   func populate() {
-    let n = 3
-    for index in 0..<n {
+    for index in 0..<nsprite {
       let square = SKSpriteNode(color: colors[self.children.count % colors.count], size: spriteSize)
       // let square = SKSpriteNode(imageNamed: "icon-on-gray-1024")
 
       // square.position = CGPoint(x: .random(in: 0...frameSize.width), y: .random(in: 0...frameSize.height))
       // let x = CGFloat(index) * spriteSize.width + spriteSize.width/2 + spriteSize.width/2
-      let x = CGFloat(index+1) * spriteSize.width
+      let w = frameSize.width
+      let offset = (w - spriteSize.width * CGFloat(nsprite)) / 2
+      let x = CGFloat(index) * spriteSize.width + spriteSize.width/2 + offset
       let y = frame.height - spriteSize.width/2
       square.position = CGPoint(x: x, y: y)
       square.physicsBody = SKPhysicsBody(rectangleOf: spriteSize)
