@@ -19,17 +19,6 @@ func charAt(_ str:String, _ offset:Int) -> String {
 
 //  print(charAt(str, 0))
 
-let randomInt = Int.random(in: 0..<str.count)
-//  print("randomInt", randomInt)
-
-//  var nstr = ""
-//  for _ in 0..<6 {
-//    let randomInt = Int.random(in: 0..<str.count)
-//    // print(index, "randomInt", randomInt)
-//    nstr += charAt(str, randomInt)
-//  }
-//  print("nstr", nstr)
-
 var serial = 0
 
 func generateLine(_ n:Int) {
