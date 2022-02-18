@@ -10,9 +10,7 @@ struct Page8: View {
   @State var selectedImage = "circle"
   var body: some View {
     VStack() {
-      Image(systemName: selectedImage  + (fillFlag ? ".fill" : "") )
-        .resizable()
-        .frame(width: len, height: len)
+      ExtractedView(selectedImage: selectedImage, fillFlag: fillFlag, len: len)
       Toggle(isOn: $fillFlag) {
         Text("Fill")
       }
@@ -28,10 +26,22 @@ struct Page8: View {
   }
 }
 
+struct ExtractedView: View {
+  var selectedImage: String
+  var fillFlag: Bool
+  var len: Double
+  var body: some View {
+    Image(systemName: selectedImage  + (fillFlag ? ".fill" : "") )
+      .resizable()
+      .frame(width: len, height: len)
+  }
+}
+
 struct Page8_Previews: PreviewProvider {
   static var previews: some View {
     Page8()
   }
 }
+
 
 

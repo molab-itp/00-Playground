@@ -9,9 +9,9 @@ struct Page6: View {
       List {
         ForEach(0 ..< imageArray.count) { index in
           let item = imageArray[index]
-          NavigationLink {
-            ItemDetail(item: item)
-          } label: {
+          NavigationLink(
+            destination: ItemDetail(item: item)
+          )  {
             ItemRow(item: item)
           }
         }
